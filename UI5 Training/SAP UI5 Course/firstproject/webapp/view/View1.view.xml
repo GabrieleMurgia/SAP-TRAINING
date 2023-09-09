@@ -3,5 +3,6 @@
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
         <content />
+        <Button id="button1" text="{customModel>/key}" press=".onChangeText" />
     </Page>
 </mvc:View>

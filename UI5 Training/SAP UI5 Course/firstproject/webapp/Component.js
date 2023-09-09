@@ -29,6 +29,13 @@ sap.ui.define([
 
                 // set the device model
                 this.setModel(models.createDeviceModel(), "device");
+
+                 // set a custom model
+                 var oCustomModel = models.createCustomModel({
+                    key: "value",
+                    anotherKey: "anotherValue"
+                });
+                this.setModel(oCustomModel, "customModel");
             }
         });
     }

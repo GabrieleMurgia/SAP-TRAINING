@@ -28,8 +28,13 @@ sap.ui.define([
                 oModel.refresh(true);
             },
             testI18n:function(){
-                var i18Model = this.getView().getModel("i18n")
-                console.log(i18Model.getProperty("title"))
+                var i18nModel = this.getView().getModel("i18n").getResourceBundle();
+                var sRecipient = this.getView().getModel("customModel").getProperty("/key")
+
+                // Ottieni la stringa localizzata e sostituisci il segnaposto {0} con il valore di 'key'
+    var sHelloText = i18nModel.getText("hello", [sRecipient]);
+
+    console.log(sHelloText);  // Dovrebbe stampare "Hi value" o "Hi newValue" a seconda del valore di 'key'
             }
         });
     });

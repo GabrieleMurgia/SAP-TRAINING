@@ -1,7 +1,6 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/m/Text",
-    "firstproject/model/models"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
@@ -27,6 +26,10 @@ sap.ui.define([
             
                 // Se vuoi aggiornare il modello (non è strettamente necessario in questo caso)
                 oModel.refresh(true);
+            },
+            testI18n:function(){
+                var i18Model = this.getView().getModel("i18n")
+                console.log(i18Model.getProperty("title"))
             }
         });
     });

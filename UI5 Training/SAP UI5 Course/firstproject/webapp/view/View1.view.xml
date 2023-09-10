@@ -11,5 +11,6 @@
 			valueStateText="Name must not be empty. Maximum 10 characters."
 			value="{customModel>/key}"/>
         <Button id="button1" text="{customModel>/key}" press=".onChangeText" />
+        <Button id="button2" text="{i18n>appDescription}" press=".testI18n"/>
     </Page>
 </mvc:View>

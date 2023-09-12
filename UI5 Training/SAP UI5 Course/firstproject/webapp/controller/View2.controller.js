@@ -1,12 +1,13 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/m/Text",
+    "sap/ui/core/Fragment"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      * @param {typeof sap.m.Text} Text
      */
-    function (Controller, Text) {
+    function (Controller, Text,Fragment) {
         "use strict";
 
         return Controller.extend("firstproject.controller.View2", {
@@ -27,14 +28,24 @@ sap.ui.define([
                 // Se vuoi aggiornare il modello (non è strettamente necessario in questo caso)
                 oModel.refresh(true);
             },
-            testI18n:function(){
-                var i18nModel = this.getView().getModel("i18n").getResourceBundle();
-                var sRecipient = this.getView().getModel("customModel").getProperty("/key")
 
-                // Ottieni la stringa localizzata e sostituisci il segnaposto {0} con il valore di 'key'
-    var sHelloText = i18nModel.getText("hello", [sRecipient]);
-
-    console.log(sHelloText);  // Dovrebbe stampare "Hi value" o "Hi newValue" a seconda del valore di 'key'
+            onOpenDialog:function(){
+                var oView = this.getView();
+                //Creazione Dialog
+                if(!this.byId("helloDialog")){
+                    //load asynchronus XML fragment
+                    Fragment.load({
+                        id:oView.getId(),
+                        name:"firstproject.view.fragments.HelloDialog"
+                    }).then(function(oDialog){
+                        // connect dialog to the root view of this component (models,lifecycle)
+                        oView.addDependent(oDialog)
+                        oDialog.open()
+                    })
+                }else{
+                    this.byId("helloDialog").open()
+                }
             }
+
         });
     });

@@ -1,23 +1,25 @@
 <mvc:View controllerName="firstproject.controller.View1"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
-   <App id="app1"> 
+ <Shell id="shell1">
+ <App id="app1"> 
    <pages>
     <Page id="page" title="{i18n>title}">
         <content>
-        <Label id="label1" text="Name" labelFor="nameInput" />
-    <Input
+        <Button id="button2" text="{i18n>appDescription}" press=".testI18n"/>
+        <Panel id="panel1" headerText="Buttons">
+         <Label id="label1" text="Name" labelFor="nameInput" />
+        <Input
 			id="Input1"
 			class="sapUiSmallMarginBottom"
 			placeholder="Change Button text here"
 			valueStateText="Name must not be empty. Maximum 10 characters."
 			value="{customModel>/key}"/>
-        <Panel id="panel1" headerText="Buttons">
         <Button id="button1" text="{customModel>/key}" press=".onChangeText" />
-        <Button id="button2" text="{i18n>appDescription}" press=".testI18n"/>
         </Panel>
         </content>
     </Page>
    </pages>
    </App>
+</Shell>
 </mvc:View>

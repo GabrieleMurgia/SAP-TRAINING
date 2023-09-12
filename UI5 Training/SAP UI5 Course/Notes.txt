@@ -1,0 +1,24 @@
+Connecting Cloud Applications to On-premise Systems using Cloud Connector:
+
+The Cloud Connector acts as a secure bridge between cloud applications and on-premise systems. It enables cloud apps to access on-premise resources, and vice versa, specifically targeting integration with SAP S/4HANA databases. The tool ensures secure identity propagation and supports multiple protocols beyond HTTP, like RFC for native access to ABAP systems. Suitable for business-critical scenarios, it offers features like automatic reconnection and audit logging. However, its use is restricted to SAP Business Technology Platform and SAP S/4HANA Cloud.
+
+SAP Business Technology Platform Cockpit - Destinations:
+
+The SAP Business Technology Platform (BTP) Cockpit uses Connectivity Destinations to link cloud applications with various types of systems and services. These Destinations are resolved at runtime and contain customer-specific configurations like URL and authentication type.
+
+ Connecting to ABAP Systems in SAP Business Technology Platform:
+
+When connecting to an ABAP system via the SAP Business Technology Platform, specific details must be configured in the Destination settings. This is particularly important for creating or extending SAP Fiori apps through the SAP Business Application Studio.
+
+Key Configuration Property:
+
+WebIDEUsage: Specify the intended use cases for the Destination here.
+Specific Usages for ABAP Systems:
+
+odata_abap: For utilizing OData functionalities through SAP Gateway. (URL path: /sap/opu/odata)
+dev_abap: For development or deployment scenarios related to the ABAP repository. (URL path: /sap/bc/adt)
+To specify multiple usages, separate them with commas but without spaces (e.g., dev_abap,odata_abap).
+
+Cloud Connector Link?
+https://localhost:8443/
+

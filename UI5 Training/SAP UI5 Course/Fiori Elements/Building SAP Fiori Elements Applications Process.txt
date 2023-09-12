@@ -1,0 +1,20 @@
+Steps:
+
+Steps
+Create an SAP Fiori elements application.
+
+Choose an OData service.
+
+Create an annotation file and writing annotation.
+
+Modify the configuration file.
+
+Translate resource bundles.
+
+Deploy your SAP Fiori elements application.
+
+Configure SAP Fiori Launchpad.
+
+Authorize user to access the SAP Fiori application.
+
+Log on to SAP Fiori Launchpad and add the tile to the SAP Fiori Launchpad.

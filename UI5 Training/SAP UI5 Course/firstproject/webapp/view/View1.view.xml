@@ -7,16 +7,7 @@
     <Page id="page" title="{i18n>title}">
         <content>
         <Button id="button2" text="{i18n>appDescription}" press=".testI18n"/>
-        <Panel id="panel1" headerText="Buttons">
-         <Label id="label1" text="Name" labelFor="nameInput" />
-        <Input
-			id="Input1"
-			class="sapUiSmallMarginBottom"
-			placeholder="Change Button text here"
-			valueStateText="Name must not be empty. Maximum 10 characters."
-			value="{customModel>/key}"/>
-        <Button id="button1" text="{customModel>/key}" press=".onChangeText" />
-        </Panel>
+        <mvc:XMLView id="View2" viewName="firstproject.view.View2"/>
         </content>
     </Page>
    </pages>

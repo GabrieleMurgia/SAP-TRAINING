@@ -3,6 +3,8 @@
     xmlns:core="sap.ui.core">
     <Dialog id="helloDialog"
         title="Hello Fischery" >
+        <beginButton>
         <Button id="helloDialogButton" text="{i18n>chiudi}" press=".onCloseDialog"/>
+        </beginButton>
         </Dialog>
 </core:FragmentDefinition>

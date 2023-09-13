@@ -32,9 +32,9 @@ sap.ui.define([
                 var sRecipient = this.getView().getModel("customModel").getProperty("/key")
 
                 // Ottieni la stringa localizzata e sostituisci il segnaposto {0} con il valore di 'key'
-    var sHelloText = i18nModel.getText("hello", [sRecipient]);
+                var sHelloText = i18nModel.getText("hello", [sRecipient]);
 
-    console.log(sHelloText);  // Dovrebbe stampare "Hi value" o "Hi newValue" a seconda del valore di 'key'
+                console.log(sHelloText);  // Dovrebbe stampare "Hi value" o "Hi newValue" a seconda del valore di 'key'
             }
         });
     });

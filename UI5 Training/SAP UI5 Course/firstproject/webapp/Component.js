@@ -5,9 +5,10 @@
 sap.ui.define([
         "sap/ui/core/UIComponent",
         "sap/ui/Device",
-        "firstproject/model/models"
+        "firstproject/model/models",
+        "./controller/fragments/HelloDialog"
     ],
-    function (UIComponent, Device, models) {
+    function (UIComponent, Device, models , HelloDialog) {
         "use strict";
 
         return UIComponent.extend("firstproject.Component", {
@@ -36,6 +37,18 @@ sap.ui.define([
                     anotherKey: "anotherValue"
                 });
                 this.setModel(oCustomModel, "customModel");
+
+                //set dialog
+                this._helloDialog = new HelloDialog(this.getRootControl());
+            },
+
+            exit:function(){
+                this._helloDialog.destroy()
+                delete this._helloDialog
+            },
+
+            openHelloDialog:function(){
+               this._helloDialog.open() 
             }
         });
     }

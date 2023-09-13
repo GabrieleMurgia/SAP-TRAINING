@@ -5,6 +5,9 @@
  <App id="app1"> 
    <pages>
     <Page id="page" title="{i18n>title}">
+    <headerContent>
+        <Button id="buttonView1" icon="sap-icon://hello-world" press=".onOpenDialog"></Button>
+    </headerContent>
         <content>
         <Button id="button2" text="{i18n>appDescription}" press=".testI18n"/>
         <mvc:XMLView id="View2" viewName="firstproject.view.View2"/>

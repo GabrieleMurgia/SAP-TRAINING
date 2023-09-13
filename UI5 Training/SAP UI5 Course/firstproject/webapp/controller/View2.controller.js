@@ -30,22 +30,7 @@ sap.ui.define([
             },
 
             onOpenDialog:function(){
-                var oView = this.getView();
-                //Creazione Dialog
-                if(!this.byId("helloDialog")){
-                    //load asynchronus XML fragment
-                    Fragment.load({
-                        id:oView.getId(),
-                        name:"firstproject.view.fragments.HelloDialog",
-                        controller:this
-                    }).then(function(oDialog){
-                        // connect dialog to the root view of this component (models,lifecycle)
-                        oView.addDependent(oDialog)
-                        oDialog.open()
-                    })
-                }else{
-                    this.byId("helloDialog").open()
-                }
+               this.getOwnerComponent().openHelloDialog()
             },
             onCloseDialog:function(){
                 this.byId("helloDialog").close()

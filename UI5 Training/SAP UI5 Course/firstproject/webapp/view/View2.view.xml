@@ -11,7 +11,7 @@
 			placeholder="Change Button text here"
 			valueStateText="Name must not be empty. Maximum 10 characters."
 			value="{customModel>/key}"/>
-            <Button id="button2" text="{i18n>openDialog}" press=".onOpenDialog" />
+            <Button id="button2" icon="sap-icon://world" text="{i18n>openDialog}" press=".onOpenDialog" />
         </Panel>
    </App>
 </Shell>

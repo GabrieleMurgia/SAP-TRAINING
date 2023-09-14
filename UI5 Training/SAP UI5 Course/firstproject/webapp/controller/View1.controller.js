@@ -15,8 +15,8 @@ sap.ui.define([
             },
 
             onOpenDialog:function(){
-                this.getOwnerComponent().openHelloDialog();
-            },
+                this.getOwnerComponent().openHelloDialog()
+             },
 
             onChangeText: function() {
                 // Ottieni il modello personalizzato dalla vista

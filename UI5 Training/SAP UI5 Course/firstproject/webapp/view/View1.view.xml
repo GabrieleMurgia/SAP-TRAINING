@@ -10,7 +10,8 @@
     </headerContent>
         <content>
         <Button id="button2" text="{i18n>appDescription}" press=".testI18n"/>
-        <mvc:XMLView id="View2" viewName="firstproject.view.View2"/>
+        <mvc:XMLView id="View2" viewName="firstproject.view.View2" height="50%"/>
+        <mvc:XMLView id="InvoiceList" viewName="firstproject.view.InvoiceList"/>
         </content>
     </Page>
    </pages>

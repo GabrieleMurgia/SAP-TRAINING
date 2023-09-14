@@ -2,11 +2,10 @@ sap.ui.define([
     "sap/ui/base/ManagedObject",
     "sap/ui/core/Fragment",
 ],
-    /**
+  /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
-     * @param {typeof sap.m.Text} Text
      */
-    function (ManagedObject, Fragment) {
+  function (ManagedObject, Fragment) {
         "use strict";
 
         return ManagedObject.extend("firstproject.controller.fragments.HelloDialog", {
@@ -19,7 +18,7 @@ sap.ui.define([
                 delete this._oView;
             },
 
-            open: function () {
+                open: function () {
                 var oView = this._oView;
                 //create the dialog lazily
                 if (!oView.byId("helloDialog")) {

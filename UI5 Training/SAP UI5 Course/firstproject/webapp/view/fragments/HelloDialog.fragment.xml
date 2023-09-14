@@ -1,14 +1,12 @@
 <core:FragmentDefinition
     xmlns="sap.m"
+    controllerName="firstproject.controller.View2"
     xmlns:core="sap.ui.core">
-    <Dialog id="helloDialog"
-        title="Hello Fischery" >
-        <content>
-        <core:Icon id="helloWorldIcon" src="sap-icon://hello-world" size="8rem" class="sapUiMediumMargin">
-        </core:Icon>
-        </content>
-        <beginButton>
-        <Button id="helloDialogButton" text="{i18n>chiudi}" press=".onCloseDialog"/>
+    <Dialog id="helloDialog" title="Hello Fischery">
+        
+        <!-- Bottone per la chiusura -->
+          <beginButton>
+        <Button id="helloDialogButton" text="chiudi" press=".onCloseDialog"/>
         </beginButton>
-        </Dialog>
+    </Dialog>
 </core:FragmentDefinition>

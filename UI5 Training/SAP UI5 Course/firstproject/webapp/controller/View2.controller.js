@@ -1,7 +1,6 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/m/Text",
-    "sap/ui/core/Fragment"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
@@ -14,7 +13,6 @@ sap.ui.define([
             onInit: function () {
           
             },
-
             onChangeText: function() {
                 // Ottieni il modello personalizzato dalla vista
                 var oModel = this.getView().getModel("customModel");
@@ -30,8 +28,8 @@ sap.ui.define([
             },
 
             onOpenDialog:function(){
-               this.getOwnerComponent().openHelloDialog()
-            }
+                this.getOwnerComponent().openHelloDialog()
+             },
 
         });
     });

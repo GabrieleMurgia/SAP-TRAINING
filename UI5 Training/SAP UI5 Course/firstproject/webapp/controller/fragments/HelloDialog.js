@@ -21,9 +21,9 @@ sap.ui.define([
 
             open: function () {
                 var oView = this._oView;
-
                 //create the dialog lazily
                 if (!oView.byId("helloDialog")) {
+                    
                     var oFragmentController = {
                         onCloseDialog: function () {
                             oView.byId("helloDialog").close()
@@ -35,7 +35,7 @@ sap.ui.define([
                         name: "firstproject.view.fragments.HelloDialog",
                         controller: oFragmentController
                     }).then(function (oDialog) {
-                        oView.addDependant(oDialog)
+                        oView.addDependent(oDialog)
                         oDialog.open()
                     })
                 } else {

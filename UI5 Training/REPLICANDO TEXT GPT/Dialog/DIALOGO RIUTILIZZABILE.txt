@@ -1,0 +1,9 @@
+1)Creare il Fragment: Crea un file XML per il frammento del dialogo. Assicurati di includere tutti gli elementi UI necessari.
+
+2)Creare il Controller del Fragment: Crea un file JavaScript per gestire la logica del frammento. Implementa i metodi per aprire e chiudere il dialogo.
+
+3)Inizializzare nel Componente Principale: Nel metodo onInit del tuo componente principale, inizializza il dialogo.
+
+4)Utilizzare in Vari Controller: Ora puoi utilizzare il dialogo in vari controller semplicemente chiamando il metodo openHelloDialog() del componente principale.
+
+5)Pulizia delle Risorse: Non dimenticare di distruggere il dialogo e rimuovere le referenze quando non sono più necessarie.

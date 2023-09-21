@@ -1,0 +1,52 @@
+<mvc:View controllerName="project1.controller.invoiceList"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:layout="sap.ui.layout"
+    xmlns="sap.m">
+
+    <Table id="invoiceList" items="{invoiceModel>/Invoices}" headerText="{i18n>invoiceListTitle}" class="sapUiResponsiveMargin">
+        <headerToolbar>
+            <Toolbar id="toolbar1">
+                <Title id="toolbartitle" text="{i18n>invoiceListTitle}"/>
+                <ToolbarSpacer id="toolbarspace" />
+                <SearchField id="toolbarsearchfield" width="50%" search=".onFilterInvoices"/>
+                <Button id="sortingButton" text="Ordina" press=".onSortInvoices"/>
+            </Toolbar>
+        </headerToolbar>
+        <columns>
+            <Column id="column1" hAlign="End" minScreenWidth="Small" demandPopin="true" width="4em">
+                <Text id="text1" text="{i18n>columnQuantity}"/>
+            </Column>
+            <Column id="column2">
+                <Text id="text2" text="{i18n>columName}"/>
+            </Column>
+            <Column id="column3" minScreenWidth="small" demandPopin="true">
+                <Text id="text3" text="{i18n>columnStatus}"/>
+            </Column>
+            <Column id="column4" minScreenWidth="Tablet" demandPopin="false">
+                <Text id="text4" text="{i18n>columnSupplier}"/>
+            </Column>
+            <Column id="column5" hAlign="End">
+                <Text id="text5" text="{i18n>columnPrice}"/>
+            </Column>
+        </columns>
+        <items>
+            <ColumnListItem id="cListItem1" type="Navigation" press=".onPress">
+                <cells>
+                    <ObjectNumber id="oN1" number="{invoiceModel>Quantity}" emphasized="false"/>
+                    <ObjectIdentifier id="oI2" title="{invoiceModel>ProductName}"/>
+                    <Text id="text6" text="{ path: 'invoiceModel>Status', formatter: '.formatter.statusText' }"/>
+                    <Text  id="text7" text="{invoiceModel>ShipperName}"/>
+                    <ObjectNumber 
+                        id="oN2"
+                        number="{
+                            parts: [{path: 'invoiceModel>ExtendedPrice'}, {path: 'view>/currency'}],
+                            type: 'sap.ui.model.type.Currency',
+                            formatOptions: { showMeasure: false }
+                        }"
+                        unit="{view>/currency}"
+                        state="{= ${invoiceModel>ExtendedPrice} > 50 ? 'Error' : 'Success'}"/>
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
+</mvc:View>

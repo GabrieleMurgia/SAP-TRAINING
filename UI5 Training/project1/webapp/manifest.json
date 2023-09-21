@@ -1,7 +1,7 @@
 {
   "_version": "1.49.0",
   "sap.app": {
-    "id": "firstproject",
+    "id": "project1",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -13,10 +13,10 @@
     "sourceTemplate": {
       "id": "@sap/generator-fiori:basic",
       "version": "1.10.4",
-      "toolsId": "2c7ca8b2-d879-492b-aa58-91358514bc63"
+      "toolsId": "b12862e8-a4cb-44e7-8fc8-776fbbc17be9"
     },
     "dataSources": {
-      "invoiceRemote":{
+      "invoiceRemote": {
         "uri": "https://service.odata.org/V2/Northwind/Northwind.svc/",
         "type": "OData",
         "settings": {
@@ -61,14 +61,14 @@
       "cozy": true
     },
     "models": {
+      "invoice": {
+        "dataSource": "invoiceRemote"
+      },
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "firstproject.i18n.i18n"
+          "bundleName": "project1.i18n.i18n"
         }
-      },
-      "invoice": {
-        "dataSource": "invoiceRemote"
       }
     },
     "resources": {
@@ -83,7 +83,7 @@
         "routerClass": "sap.m.routing.Router",
         "viewType": "XML",
         "async": true,
-        "viewPath": "firstproject.view",
+        "viewPath": "project1.view",
         "controlAggregation": "pages",
         "controlId": "app",
         "clearControlAggregation": false
@@ -95,6 +95,16 @@
           "target": [
             "TargetView1"
           ]
+        },
+        {
+          "pattern": "overview",
+          "name": "overview",
+          "target": ["overview"]
+        },
+        {
+          "pattern": "detail/{invoicePath}",
+          "name": "detail",
+          "target": ["detail"]
         }
       ],
       "targets": {
@@ -104,11 +114,23 @@
           "clearControlAggregation": false,
           "viewId": "View1",
           "viewName": "View1"
+        },
+        "overview": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "Overview",
+          "viewName": "Overview"
+        },
+        "detail": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "Detail",
+          "viewName": "Detail"
         }
       }
     },
     "rootView": {
-      "viewName": "firstproject.view.App",
+      "viewName": "project1.view.App",
       "type": "XML",
       "async": true,
       "id": "App"

@@ -1,0 +1,6 @@
+<mvc:View controllerName="project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+            <Button id="buttonOverview" icon="sap-icon://hello-world" press=".onOpenDialog"/>     
+            <mvc:XMLView  id="invoiceListView" viewName="project1.view.invoiceList"></mvc:XMLView>
+</mvc:View>

@@ -1,0 +1,118 @@
+<mvc:View controllerName="project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:form="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+    <Page >
+    <Panel id="panel1" headerText="{customModel/panelHeaderText}"
+           class="sapUiResponsiveMargin"
+           width="auto">
+           <form:SimpleForm id="form1"
+            editable="true"
+            layout="ColumnLayout">
+                <Label id="First-Name" text="First Name"/>
+                <Input id="First-Name-Input" value="{customModel>/firstName}"
+                       valueLiveUpdate="true"
+                       width="200px"
+                       enabled="{customModel>/enabled}"/>
+                <Label id="Last-Name" text="Last Name"/>
+                <Input id="Last-Name-Input" value="{customModel>/lastName}"
+                       valueLiveUpdate="true"
+                       width="200px"
+                       enabled="{customModel>/enabled}"/>
+                <Label id="enabledCheckboxLabel" text="Enabled"/>
+                <CheckBox id="enabledCheckbox" selected="{customModel>/enabled}"/>
+            </form:SimpleForm>
+    </Panel>
+     <Panel id="panel2"
+        headerText="{i18n>panel2HeaderText}"
+        class="sapUiResponsiveMargin"
+        width="auto">
+        <content>
+            <l:VerticalLayout id="vLayout1">
+                <Label id="addressLabel" labelFor="address" 
+                       text="{i18n>address}:"/>
+                <FormattedText 
+                    class="sapUiSmallMarginBottom"
+                     htmlText="{customModel>/address/street}&lt;br&gt;{customModel>/address/zip}
+                     {customModel>/address/city}&lt;br&gt;{customModel>/address/country}"
+                     id="address"
+                     width="200px"/>
+                      <Link id="link1" href="{
+                        parts: [
+                            '/firstName',
+                            '/lastName'
+                        ],
+                        formatter: '.formatMail'
+                    }"
+                    text="{i18n>sendEmail}"/>
+            </l:VerticalLayout>
+             <l:VerticalLayout id="vLayout2">
+                <Label  id="addressLabel2" labelFor="salesAmount" 
+                       text="{i18n>salesAmount}:"/>
+                <Input description="{customModel>/currencyCode}"  
+                       enabled="{customModel>/enabled}"
+                       id="salesAmount"
+                       value="{
+                           parts: [
+                            {path: 'customModel>/salesAmount'},
+                            {path: 'customModel>/currencyCode'}
+                           ],
+                           type: 'sap.ui.model.type.Currency',
+                           formatOptions: {showMeasure: false}
+                       }"
+                       width="200px"/>
+            </l:VerticalLayout>
+        </content>
+        </Panel>
+    <Panel id="panel3"
+    headerText="{i18n>panel3HeaderText}"
+    >
+        <List id="list3"
+            headerText="{i18nproductListTitle}" 
+            items="{
+                path: 'products>/Products',
+                factory: '.productListFactory'
+            }">
+            
+               <dependents>
+                <core:Fragment 
+                    fragmentName="project1.view.fragments.ProductSimple"
+                    type="XML"/>
+                <core:Fragment 
+                    fragmentName="project1.view.fragments.ProductExtended"
+                    type="XML"/>
+            </dependents>   
+
+        </List>
+    </Panel>
+    <Panel  id="productDetailsPanel"
+        headerText="{i18n>panel4HeaderText}"
+        class="sapUiResponsiveMargin"
+        width="auto"
+    >
+        <form:SimpleForm id="form2"
+                editable="true"
+                layout="ColumnLayout">
+                    <Label id="labelProductId" text="{i18n>ProductID}"/>
+                    <Input id="productId" value="{products>ProductID}"/>
+
+                    <Label id="labelProductName" text="{i18n>ProductName}"/>
+                    <Input id="productName" value="{products>ProductName}"/>
+
+                    <Label  id="labelQPerUnit" text="{i18n>QuantityPerUnit}"/>
+                    <Input  id="qPerUnit" value="{products>QuantityPerUnit}"/>
+
+                    <Label  id="labelUnitPrice" text="{i18n>UnitPrice}"/>
+                    <Input  id="unitPrice" value="{products>UnitPrice}"/>
+
+                    <Label  id="labelUnitInStock" text="{i18n>UnitsInStock}"/>
+                    <Input  id="unitInStock" value="{products>UnitsInStock}"/>
+
+                    <Label  id="labelDiscontinued" text="{i18n>Discontinued}"/>
+                    
+            </form:SimpleForm>
+    </Panel>
+    </Page>
+</mvc:View>

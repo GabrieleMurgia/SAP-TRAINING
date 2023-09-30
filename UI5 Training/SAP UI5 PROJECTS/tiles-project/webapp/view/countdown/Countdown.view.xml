@@ -1,0 +1,44 @@
+<mvc:View controllerName="tilesproject.controller.countdown.Countdown"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:l="sap.ui.layout"
+    xmlns:grid="sap.ui.layout.cssgrid"
+    xmlns="sap.m">
+   <Page id="pageCountdown">
+   <grid:CSSGrid id="grid1"
+     gridTemplateRows="1fr"
+     gridGap="1rem"
+   >
+   <Image id="sapImg" src="https://upload.wikimedia.org/wikipedia/commons/8/8f/SAP-Logo.svg"/>
+   	<grid:CSSGrid
+			id="grid2"
+			gridTemplateColumns="1fr 1fr 1fr 1fr"
+		
+			gridGap="1rem">
+			
+				<GenericTile id="tileDay" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Days"  press="press">
+		<TileContent id="tileC1">
+			<NumericContent id="numericC1" value="{timer>/days}"  withMargin="false" valueColor="Critical" />
+		</TileContent>
+	</GenericTile>
+
+	<GenericTile id="tileHours" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Hours"  press="press">
+		<TileContent id="tileC2">
+			<NumericContent id="numericC2" value="{timer>/hours}"  valueColor="Error" withMargin="false" />
+		</TileContent>
+	</GenericTile>
+  	<GenericTile id="tileMinutes" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Minutes"  press="press">
+		<TileContent id="tileC3">
+			<NumericContent id="numericC3" value="{timer>/minutes}" valueColor="Good" withMargin="false" />
+		</TileContent>
+	</GenericTile>
+
+	<GenericTile id="tileSeconds" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Seconds"  press="press">
+		<TileContent id="tileC4">
+			<NumericContent id="numericC4" value="{timer>/seconds}" withMargin="false" />
+		</TileContent>
+	</GenericTile>
+		</grid:CSSGrid>
+   </grid:CSSGrid>
+     
+   </Page>
+</mvc:View>
